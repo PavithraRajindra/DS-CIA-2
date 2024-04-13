@@ -40,7 +40,7 @@ Team Member's Details: [Name, Roll Number, Role]
 	3. Nilanjana T 			- 23110104 - Tester
 	4. Shravya K 			- 23110401 - Tester
 	5. Swaathi B 			- 23110017 - Tester
-	6. Pavithra Rajindra 	- 23110088 - Developer
+	6. Pavithra Rajindra 		- 23110088 - Developer
 	7. R Sai Sreya 			- 23110186 - Developer
 	8. R G Samyuktha 		- 23110108 - Developer
 	9. Sanjana S 			- 23110176 - Developer

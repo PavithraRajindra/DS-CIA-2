@@ -20,7 +20,7 @@ This repository contains the implementation of Disjoint Set ADT and Self-Organiz
 
 ## Contents
 
-- `disjoint_set.cppp`: Implementation of Disjoint Set ADT.
+- `disjoint_set.cpp`: Implementation of Disjoint Set ADT.
 - `self_organizing_list.cpp`: Implementation of Self-Organizing List.
 - `tests/`: Directory containing unit tests for both implementations.
 - `docs/`: Additional documentation and resources.

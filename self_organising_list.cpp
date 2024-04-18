@@ -33,9 +33,6 @@ int main()
     List l1;
     while (true)
     {
-        getchar();
-        getchar();
-        system("cls");
         printf("Menu:\n1. Insert\n2. Delete\n3. Access\n4. Display\n5. Exit\n");
         int choice;
         printf("Enter your choice: ");
@@ -45,58 +42,57 @@ int main()
         {
             int num, res;
             case 1:
-                printf("Enter number to insert: ");
+                printf("\nEnter number to insert: ");
                 scanf("%d", &num);
 
                 if (l1.insertion(num)) 
                 {
-                    printf("Element %d inserted successfully.\n", num);
+                    printf("Element %d inserted successfully.\n\n", num);
                 } 
                 else 
                 {
-                    printf("Insertion failed.\n");
+                    printf("Insertion failed.\n\n");
                 }
                 break;
 
             case 2:
-                printf("Enter number to delete: ");
+                printf("\nEnter number to delete: ");
                 scanf("%d", &num);
 
                 if (l1.deletion(num)) 
                 {
-                    printf("Element %d deleted successfully.\n", num);
+                    printf("Element %d deleted successfully.\n\n", num);
                 } 
                 else 
                 {
-                    printf("Deletion failed.\n");
+                    printf("Deletion failed.\n\n");
                 }
                 break;
 
             case 3:
-                printf("Enter number to access: ");
+                printf("\nEnter number to access: ");
                 scanf("%d", &num);
 
                 if (l1.access(num)) 
                 {
-                    printf("Element %d found.\n", num);
+                    printf("Element %d found.\n\n", num);
                 }
                 else 
                 {
-                    printf("Element %d not found.\n", num);
+                    printf("Element %d not found.\n\n", num);
                 }
                 break;
 
             case 4:
                 l1.display();
-                printf("\n");
                 break;
 
             case 5:
-                printf("Program exited\n");
+                printf("\nProgram exited\n");
                 exit(0);
 
             default:
-                printf("Invalid choice entered. Enter valid choice.\n");
+                printf("\nInvalid choice entered. Enter valid choice.\n\n");
                 break;
         }
     }
@@ -108,7 +104,7 @@ bool List::insertion(int num)
     struct node *newnode = (struct node *)malloc(sizeof(struct node));
     if (newnode == NULL)
     {
-        printf("Memory allocation failed.\n");
+        printf("\nMemory allocation failed.\n\n");
         return false;
     }
 
@@ -147,7 +143,7 @@ bool List::deletion(int num)
             } 
             else 
             {
-            tail = nullptr; // Handle empty list or list with only one element
+            tail = nullptr;
             }
         } 
         else if (temp == tail) 
@@ -159,7 +155,7 @@ bool List::deletion(int num)
             } 
             else 
             {
-            head = nullptr; // Handle empty list after deleting tail
+            head = nullptr;
             }
         } 
         else 
@@ -186,7 +182,12 @@ void List::movetofront(struct node *temp)
     {
         return;
     }
-    if (temp != tail)
+    if (temp == tail)
+    {
+        tail = temp->prev;
+        tail->next = nullptr;
+    }
+    else
     {
         temp->next->prev = temp->prev;
     }
@@ -222,12 +223,12 @@ void List::display()
 
     if (head == nullptr)
     {
-        printf("The list is empty.\n");
+        printf("\nThe list is empty.\n\n");
     }
 
     else
     {
-        printf("Contents of the self organising list:\n");
+        printf("\nContents of the self organising list:\n\n");
         while (temp != nullptr)
         {
             printf("%d ", temp->data);

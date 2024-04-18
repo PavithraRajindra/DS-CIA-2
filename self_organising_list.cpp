@@ -50,7 +50,7 @@ int main()
 
                 if (l1.insertion(num)) 
                 {
-                    printf("Element inserted successfully.\n");
+                    printf("Element %d inserted successfully.\n", num);
                 } 
                 else 
                 {

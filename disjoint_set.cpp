@@ -8,7 +8,7 @@ class tree{
 		struct node* parent;
 		int rank;
 		};
-				
+
 		struct node* root;	
 
 	public:
@@ -16,11 +16,12 @@ class tree{
 		tree(){
 			root = NULL;
 			for (int i = 0; i < 100; i++) {
-            nodes[i] = nullptr;
+                nodes[i] = nullptr;
         	}
 		}
 
 		struct node* create(int);
+       		int fin(int);
 		struct node* find(int);
 		bool merge(int, int);
 		void display(int);
@@ -40,10 +41,15 @@ tree :: node* tree :: create(int data) {
     return newnode;
 }
 
+int tree::fin(int ele)
+{
+    return find(ele)->data;
+}
+
 // Function to find the root of the tree containing the given node
 tree::node* tree::find(int ele) {
     if (nodes[ele] == nullptr) {
-        printf("Error: Element not found!\n");
+        //printf("Error: Element not found!\n");
         return nullptr;
     }
 
@@ -80,14 +86,14 @@ bool tree :: merge(int ele_1, int ele_2) {
 
 int main() {
 	tree t;
-	int choice, num_1, num_2;
+	int choice, num_1, num_2, par;
 
 	while(true){
-		printf("\nMENU\n1. Insert\n2. Find\n3. Union\n4. Exit\nEnter your choice: ");
+		printf("\n\nMENU\n1. Insert\n2. Find\n3. Union\n4. Exit\nEnter your choice: ");
 		scanf("%d", &choice);
 
 		switch(choice){
-			
+
 			case 1:
 				printf("Enter element to be inserted: ");
 				scanf("%d", &num_1);
@@ -99,19 +105,19 @@ int main() {
 					printf("Failed to create set!");
 				}
 				break;
-			
-			case 2:
-				printf("Enter element to be searched: ");
-				scanf("%d", &num_1);
 
-				if(t.find(num_1)){
-					printf("Element found!");
+			case 2:
+				printf("Enter element whose parent is to be found: ");
+				scanf("%d", &num_1);
+                par = t.fin(num_1);
+				if(par){
+					printf("Root of %d is %d", num_1, par);
 				}
 				else{
 					printf("Element not found!");
 				}
 				break;
-			
+
 			case 3:
 				printf("Enter elements of the sets to be merged: ");
 				scanf("%d %d",&num_1, &num_2);
@@ -123,10 +129,10 @@ int main() {
 					printf("Merge failed!");
 				}
 				break;
-			
+
 			case 4:
 				exit(0);
-			
+
 			default:
 				printf("Invalid Choice!");
 				break;

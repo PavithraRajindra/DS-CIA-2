@@ -21,7 +21,7 @@ class tree{
 		}
 
 		struct node* create(int);
-       		int fin(int);
+       	int fin(int);
 		struct node* find(int);
 		bool merge(int, int);
 		void display(int);
@@ -49,7 +49,7 @@ int tree::fin(int ele)
 // Function to find the root of the tree containing the given node
 tree::node* tree::find(int ele) {
     if (nodes[ele] == nullptr) {
-        //printf("Error: Element not found!\n");
+        printf("Error: Element not found!\n");
         return nullptr;
     }
 
@@ -65,6 +65,10 @@ tree::node* tree::find(int ele) {
 bool tree :: merge(int ele_1, int ele_2) {
     struct node* root_1 = find(ele_1);
     struct node* root_2 = find(ele_2);
+
+	if(root_1 == nullptr || root_2 == nullptr){
+		return false;
+	}
 
     if (root_1 == root_2){
 		printf("Sets are not disjoint!\n");

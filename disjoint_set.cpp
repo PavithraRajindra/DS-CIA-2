@@ -10,13 +10,13 @@ private:
     };
 
     struct node* root;
-    struct node** nodes; // Dynamic array of pointers to nodes.
+    struct node** nodes; // Dynamic array of pointers to nodes
     int capacity;
 
 public:
     tree() {
         root = nullptr;
-        capacity = 0;
+        capacity = 100;
         nodes = new struct node*[capacity];
         for (int i = 0; i < capacity; ++i) {
             nodes[i] = nullptr;
@@ -63,7 +63,12 @@ tree :: node* tree :: create(int data) {
 
 int tree::fin(int ele)
 {
-    return find(ele)->data;
+    if(find(ele)){
+		return find(ele)->data;
+	}
+	else{
+		return 0;
+	}
 }
 
 // Function to find the root of the tree containing the given node
@@ -133,12 +138,9 @@ int main() {
 			case 2:
 				printf("Enter element whose parent is to be found: ");
 				scanf("%d", &num_1);
-               		 	par = t.fin(num_1);
+                par = t.fin(num_1);
 				if(par){
-					printf("%d is in the set with %d as its parent", num_1, par);
-				}
-				else{
-					printf("Element not found!");
+					printf("Root of %d is %d", num_1, par);
 				}
 				break;
 
@@ -147,7 +149,7 @@ int main() {
 				scanf("%d %d",&num_1, &num_2);
 
 				if(t.merge(num_1, num_2)){
-					printf("Merge successful!");
+					printf("Merge successful!\n");
 				}
 				else{
 					printf("Merge failed!");

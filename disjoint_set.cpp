@@ -74,7 +74,7 @@ int tree::fin(int ele)
 // Function to find the root of the tree containing the given node
 tree::node* tree::find(int ele) {
     if (nodes[ele] == nullptr) {
-        printf("Error: Element not found!\n");
+        printf("Error: Element not found!");
         return nullptr;
     }
 
@@ -138,9 +138,9 @@ int main() {
 			case 2:
 				printf("Enter element whose parent is to be found: ");
 				scanf("%d", &num_1);
-                par = t.fin(num_1);
+                		par = t.fin(num_1);
 				if(par){
-					printf("Root of %d is %d", num_1, par);
+					printf("%d is in the set whose parent is %d", num_1, par);
 				}
 				break;
 

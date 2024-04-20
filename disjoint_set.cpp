@@ -133,9 +133,9 @@ int main() {
 			case 2:
 				printf("Enter element whose parent is to be found: ");
 				scanf("%d", &num_1);
-                par = t.fin(num_1);
+               		 	par = t.fin(num_1);
 				if(par){
-					printf("Root of %d is %d", num_1, par);
+					printf("%d is in the set with %d as its parent", num_1, par);
 				}
 				else{
 					printf("Element not found!");
@@ -147,7 +147,7 @@ int main() {
 				scanf("%d %d",&num_1, &num_2);
 
 				if(t.merge(num_1, num_2)){
-					printf("Merge successful!\n");
+					printf("Merge successful!");
 				}
 				else{
 					printf("Merge failed!");

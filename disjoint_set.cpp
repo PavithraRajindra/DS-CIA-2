@@ -1,36 +1,41 @@
+//Program to implement Disjoint Set ADT using Union-Find Data Structure
 #include <stdio.h>
 #include <stdlib.h>
 
-class tree {
-private:
-    struct node {
-        int data;
-        struct node* parent;
-        int rank;
-    };
+class tree
+{
+	private:
+		struct node
+		{
+			int data;
+			struct node* parent;
+			int rank;
+		};
 
-    struct node* root;
-    struct node** nodes; // Dynamic array of pointers to nodes
-    int capacity;
+		struct node* root;
+		struct node** nodes; // Dynamic array of pointers to nodes
+		int capacity;
 
-public:
-    tree() {
-        root = nullptr;
-        capacity = 100;
-        nodes = new struct node*[capacity];
-        for (int i = 0; i < capacity; ++i) {
-            nodes[i] = nullptr;
-        }
-    }
+	public:
+		tree()
+		{
+			root = nullptr;
+			capacity = 100;
+			nodes = new struct node*[capacity];
+			for (int i = 0; i < capacity; ++i){
+				nodes[i] = nullptr;
+			}
+		}
 
-	struct node* create(int);
-	int fin(int);
-	struct node* find(int);
-	bool merge(int, int);
+		struct node* create(int);
+		int fin(int);
+		struct node* find(int);
+		bool merge(int, int);
 };
 
 // Function to create a new node with a given data value
-tree :: node* tree :: create(int data) {
+tree :: node* tree :: create(int data)
+{
     struct node* newnode = (struct node*)malloc(sizeof(struct node));
 	if(newnode==nullptr){
 		printf("Memory Allocation failed!\n");
@@ -72,14 +77,14 @@ int tree::fin(int ele)
 }
 
 // Function to find the root of the tree containing the given node
-tree::node* tree::find(int ele) {
-    if (nodes[ele] == nullptr) {
-        printf("Error: Element not found!");
+tree::node* tree::find(int ele)
+{
+    if (nodes[ele] == nullptr){
         return nullptr;
     }
 
     struct node* temp = nodes[ele];
-    if (temp != temp->parent) {
+    if (temp != temp->parent){
         temp->parent = find(temp->parent->data);
     }
     return temp->parent;
@@ -87,11 +92,23 @@ tree::node* tree::find(int ele) {
 
 
 // Function to merge two sets (by rank)
-bool tree :: merge(int ele_1, int ele_2) {
+bool tree :: merge(int ele_1, int ele_2)
+{
     struct node* root_1 = find(ele_1);
     struct node* root_2 = find(ele_2);
 
-	if(root_1 == nullptr || root_2 == nullptr){
+	if(root_1 == nullptr && root_2 == nullptr){
+		printf("Error: Elements %d and %d not found!\n",ele_1,ele_2);
+		return false;
+	}
+	else if(root_1==nullptr)
+	{
+		printf("Error: Element %d not found!\n",ele_1);
+		return false;
+	}
+	else if(root_2==nullptr)
+	{
+		printf("Error: Element %d not found!\n",ele_2);
 		return false;
 	}
 
@@ -100,13 +117,13 @@ bool tree :: merge(int ele_1, int ele_2) {
 		return false; 
 	}
 
-    if (root_1->rank < root_2->rank) {
+    if (root_1->rank < root_2->rank){
         root_1->parent = root_2;
     } 
-	else if (root_1->rank > root_2->rank) {
+	else if (root_1->rank > root_2->rank){
         root_2->parent = root_1;
     } 
-	else {
+	else{
         root_2->parent = root_1;
         root_1->rank++;
     }
@@ -138,9 +155,12 @@ int main() {
 			case 2:
 				printf("Enter element whose parent is to be found: ");
 				scanf("%d", &num_1);
-                		par = t.fin(num_1);
+                par = t.fin(num_1);
 				if(par){
 					printf("%d is in the set whose parent is %d", num_1, par);
+				}
+				else{
+					printf("Error: Element %d not found!\n",num_1);
 				}
 				break;
 
@@ -149,7 +169,7 @@ int main() {
 				scanf("%d %d",&num_1, &num_2);
 
 				if(t.merge(num_1, num_2)){
-					printf("Merge successful!\n");
+					printf("Merge successful!");
 				}
 				else{
 					printf("Merge failed!");
@@ -157,10 +177,11 @@ int main() {
 				break;
 
 			case 4:
+				printf("Exiting...\n");
 				exit(0);
 
 			default:
-				printf("Invalid Choice!");
+				printf("Invalid Choice!\n");
 				break;
 		}
 	}

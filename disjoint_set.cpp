@@ -1,30 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-class tree{
-	private:
-		struct node {
-		int data;
-		struct node* parent;
-		int rank;
-		};
+class tree {
+private:
+    struct node {
+        int data;
+        struct node* parent;
+        int rank;
+    };
 
-		struct node* root;	
+    struct node* root;
+    struct node** nodes; // Dynamic array of pointers to nodes
+    int capacity;
 
-	public:
-		struct node* nodes[100];
-		tree(){
-			root = NULL;
-			for (int i = 0; i < 100; i++) {
-                nodes[i] = nullptr;
-        	}
-		}
+public:
+    tree() {
+        root = nullptr;
+        capacity = 0;
+        nodes = new struct node*[capacity];
+        for (int i = 0; i < capacity; ++i) {
+            nodes[i] = nullptr;
+        }
+    }
 
-		struct node* create(int);
-       	int fin(int);
-		struct node* find(int);
-		bool merge(int, int);
-		void display(int);
+	struct node* create(int);
+	int fin(int);
+	struct node* find(int);
+	bool merge(int, int);
 };
 
 // Function to create a new node with a given data value
@@ -34,6 +36,24 @@ tree :: node* tree :: create(int data) {
 		printf("Memory Allocation failed!\n");
 		return nullptr;
 	}
+	if (capacity <= data) {
+        int new_capacity = data + 1;
+        struct node** new_nodes = (struct node**)malloc(new_capacity* sizeof(struct node*));
+        if (new_nodes == nullptr) {
+            printf("Memory Allocation failed!");
+            delete newnode;
+            return nullptr;
+        }
+        for (int i = 0; i < capacity; ++i) {
+            new_nodes[i] = nodes[i];
+        }
+        for (int i = capacity; i < new_capacity; ++i) {
+            new_nodes[i] = nullptr;
+        }
+        delete[] nodes;
+        nodes = new_nodes;
+        capacity = new_capacity;
+    }
     newnode->data = data;
     newnode->parent = newnode; 
     newnode->rank = 0; 

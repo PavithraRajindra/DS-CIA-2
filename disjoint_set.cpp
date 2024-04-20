@@ -10,7 +10,7 @@ private:
     };
 
     struct node* root;
-    struct node** nodes; // Dynamic array of pointers to nodes
+    struct node** nodes; // Dynamic array of pointers to nodes.
     int capacity;
 
 public:

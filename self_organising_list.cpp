@@ -75,7 +75,7 @@ int main()
 
                 if (l1.access(num)) 
                 {
-                    printf("Element %d found.\n\n", num);
+                    printf("Element %d accessed.\n\n", num);
                 }
                 else 
                 {

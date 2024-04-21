@@ -88,7 +88,7 @@ int main()
                 break;
 
             case 5:
-                printf("\nProgram exited\n");
+                printf("Program exited\n");
                 exit(0);
 
             default:
@@ -234,5 +234,6 @@ void List::display()
             printf("%d ", temp->data);
             temp = temp->next;
         }
+        printf("\n\n");
     }
 }

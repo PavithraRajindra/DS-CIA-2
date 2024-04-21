@@ -153,7 +153,7 @@ int main() {
 				scanf("%d", &num_1);
 
                 par = t.find(num_1);
-				if(par!=1){
+				if(par!=-1){
 					printf("%d is in the set whose parent is %d", num_1, par);
 				}
 				else{

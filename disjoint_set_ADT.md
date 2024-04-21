@@ -1,4 +1,4 @@
-## ## Disjoint Set ADT
+## Disjoint Set ADT
 The implementation of disjoint-set data structure using trees, particularly with the union by rank method, offers several advantages over other data structures like arrays
 
 ## Efficient Union and Find Operations 

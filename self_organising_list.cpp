@@ -228,7 +228,7 @@ void List::display()
 
     else
     {
-        printf("\nContents of the self organising list:\n\n");
+        printf("\nContents of the self organising list:\n");
         while (temp != nullptr)
         {
             printf("%d ", temp->data);

@@ -13,7 +13,7 @@ class tree
 		};
 
 		struct node* root;
-		struct node** nodes; // Dynamic array of pointers to nodes
+		struct node** nodes;
 		int capacity;
 
 	public:
@@ -21,7 +21,7 @@ class tree
 		{
 			root = nullptr;
 			capacity = 100;
-			nodes = new struct node*[capacity];
+			nodes = (struct node**) malloc(capacity * sizeof(struct node*));
 			for (int i = 0; i < capacity; ++i){
 				nodes[i] = nullptr;
 			}
@@ -36,17 +36,17 @@ class tree
 // Function to create a new node with a given data value
 tree :: node* tree :: create(int data)
 {
-    struct node* newnode = (struct node*)malloc(sizeof(struct node));
+  struct node* newnode = (struct node*)malloc(sizeof(struct node));
 	if(newnode==nullptr){
 		printf("Memory Allocation failed!\n");
 		return nullptr;
 	}
 	if (capacity <= data) {
-        int new_capacity = data + 1;
+        int new_capacity = capacity*2;
         struct node** new_nodes = (struct node**)malloc(new_capacity* sizeof(struct node*));
         if (new_nodes == nullptr) {
             printf("Memory Allocation failed!");
-            delete newnode;
+            free(newnode);
             return nullptr;
         }
         for (int i = 0; i < capacity; ++i) {
@@ -55,7 +55,7 @@ tree :: node* tree :: create(int data)
         for (int i = capacity; i < new_capacity; ++i) {
             new_nodes[i] = nullptr;
         }
-        delete[] nodes;
+        free(nodes);
         nodes = new_nodes;
         capacity = new_capacity;
     }
@@ -68,8 +68,12 @@ tree :: node* tree :: create(int data)
 
 int tree::fin(int ele)
 {
-    if(find(ele)){
-		return find(ele)->data;
+	if(capacity < ele){
+		return 0;
+	}
+	struct node* temp=find(ele);
+    if(temp){
+		return temp->data;
 	}
 	else{
 		return 0;
@@ -113,7 +117,7 @@ bool tree :: merge(int ele_1, int ele_2)
 	}
 
     if (root_1 == root_2){
-		printf("Sets are not disjoint!\n");
+		printf("Both elements are in the same set!\n");
 		return false; 
 	}
 

@@ -30,9 +30,9 @@ Overall, tree-based implementations with union by rank strike a balance between 
 ## Algorithm
 
 ## Algorithm: Create(Data)
-    - **Input:** Data(integer).
-    - **Output:** Newnode (pointer to a node).
-    - **Steps:**
+    - Input: Data(integer).
+    - Output: Newnode (pointer to a node).
+    - Steps:
         - Allocate memory for a new node.
         - Initialize the new node->data = data value 
         - Setting its parent pointer to itself and rank = 0.
@@ -41,9 +41,9 @@ Overall, tree-based implementations with union by rank strike a balance between 
         - Return a pointer to the new node.
 
 ## Algorithm: Find(Element)
-    - **Input:** Data(integer).
-    - **Output**: Pointer to the root node of the tree.
-    - **Steps:**
+    - Input: Data(integer).
+    - Output: Pointer to the root node of the tree.
+    - Steps:
         - Retrieve the node corresponding to the given element's data value from the nodes array.
         - If the node is not found, return nullptr.
         - Initialize temp = nodes[data].
@@ -53,9 +53,9 @@ Overall, tree-based implementations with union by rank strike a balance between 
         - Return the pointer to the root node of the tree.
 
 ## Algorithm: Merge(Element1, Element2)
-    - **Input:** Num1 and Num2 (integers).
-    -** Output:** Success or Failure.
-    - **Steps:**
+    - Input: Num1 and Num2 (integers).
+    - Output: Success or Failure.
+    - Steps:
         - Call Find method to find the root nodes of the elements.
         - If either of the elements is not found (i.e., Find operation returns nullptr), return False.
         - If the root nodes of both elements are the same, return False (Sets are not disjoint).

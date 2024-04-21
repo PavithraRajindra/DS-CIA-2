@@ -6,31 +6,12 @@ Welcome to our group project repository. This project focuses on designing and i
 ## Overview
 This repository contains the implementation of Disjoint Set ADT and Self-Organizing List in C/C++. Both data structures are fundamental in computer science and have various applications in different domains
 
-## Purpose
-
-
-
-## Algorithm
-
-
-
-## Implementation Details
-
-
-
 ## Contents
 
 - `disjoint_set.cpp`: Implementation of Disjoint Set ADT.
 - `self_organising_list.cpp`: Implementation of Self-Organizing List.
 - `Self Organising List.txt`: Explanation for the use of "move to front" in SOL
-- 
-
-## Usage
-
-
-
-## Performance Analysis
-
+- `Disjoint Set ADT.md`: Explanation for the use of "trees and union by rank" in Disjoint Set
 
 
 ## Contributors

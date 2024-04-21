@@ -16,11 +16,12 @@ class tree
 		int capacity;
 
 	public:
+		//Constructor
 		tree(){
 			capacity = 100;
 			nodes = (struct node**) malloc(capacity * sizeof(struct node*));
 			if(nodes==nullptr){
-				printf("Memory  allocation failed!\n");
+				printf("Memory  allocation failed!");
 				exit(0);
 			}
 			for (int i = 0; i < capacity; i++){
@@ -28,6 +29,7 @@ class tree
 			}
 		}
 
+		//Destructor
 		~tree(){
 			for( int i = 0; i < capacity; i++){
 				free(nodes[i]);
@@ -40,11 +42,11 @@ class tree
 		bool merge(int, int);
 };
 
-// Function to create a new node with a given data value
+// Method to create a new node with a given data value
 tree :: node* tree :: create(int data){
   struct node* newnode = (struct node*)malloc(sizeof(struct node));
 	if(newnode==nullptr){
-		printf("Memory Allocation failed!\n");
+		printf("Memory Allocation failed!");
 		exit(0);
 	}
 	if (capacity <= data) {
@@ -72,7 +74,7 @@ tree :: node* tree :: create(int data){
     return newnode;
 }
 
-// Function to find the root of the tree containing the given node
+// Method to find the root of the tree containing the given node
 int tree::find(int ele){
     if (ele < 0 || ele >= capacity || nodes[ele] == nullptr){
         return -1;
@@ -87,7 +89,7 @@ int tree::find(int ele){
 }
 
 
-// Function to merge two sets (by rank)
+// Method to merge two sets (by rank)
 bool tree :: merge(int ele_1, int ele_2){
     int root_1 = find(ele_1);
     int root_2 = find(ele_2);
@@ -128,7 +130,6 @@ bool tree :: merge(int ele_1, int ele_2){
 int main() {
 	tree t;
 	int choice, num_1, num_2, par;
-	char extra;
 
 	while(true){
 		printf("\n\nMENU\n1. Insert\n2. Find\n3. Union\n4. Exit\nEnter your choice: ");
@@ -154,10 +155,10 @@ int main() {
 
                 par = t.find(num_1);
 				if(par!=-1){
-					printf("%d is in the set whose parent is %d", num_1, par);
+					printf("%d is in the set whose parent is %d\nSearch successful!", num_1, par);
 				}
 				else{
-					printf("Error: Element %d not found!\n",num_1);
+					printf("Error: Element %d not found!\nSearch failed!",num_1);
 				}
 				break;
 
@@ -174,11 +175,11 @@ int main() {
 				break;
 
 			case 4:
-				printf("Exiting...\n");
+				printf("Program Exited successfully!");
 				exit(0);
 
 			default:
-				printf("Invalid Choice!\n");
+				printf("Invalid Choice!");
 				break;
 		}
 	}

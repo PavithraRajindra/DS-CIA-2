@@ -91,8 +91,8 @@ int tree::find(int ele){
 
 // Method to merge two sets (by rank)
 bool tree :: merge(int ele_1, int ele_2){
-    int root_1 = find(ele_1);
-    int root_2 = find(ele_2);
+	int root_1 = find(ele_1);
+    	int root_2 = find(ele_2);
 
 	if(root_1 == -1 && root_2 == -1){
 		printf("Error: Elements %d and %d not found!\n",ele_1,ele_2);
@@ -109,21 +109,21 @@ bool tree :: merge(int ele_1, int ele_2){
 		return false;
 	}
 
-    if (root_1 == root_2){
+    	if (root_1 == root_2){
 		printf("Both elements are in the same set!\n");
 		return false; 
 	}
 
-    if (nodes[root_1]->rank < nodes[root_2]->rank){
-        nodes[root_1]->parent = nodes[root_2];
-    } 
+    	if (nodes[root_1]->rank < nodes[root_2]->rank){
+        	nodes[root_1]->parent = nodes[root_2];
+    	} 
 	else if (nodes[root_1]->rank > nodes[root_2]->rank){
-        nodes[root_2] -> parent = nodes[root_1];
-    } 
+        	nodes[root_2] -> parent = nodes[root_1];
+    	} 
 	else{
-        nodes[root_2] -> parent = nodes[root_1];
-        nodes[root_1]->rank++;
-    }
+        	nodes[root_2] -> parent = nodes[root_1];
+        	nodes[root_1]->rank++;
+    	}
 	return true;
 }
 
@@ -153,7 +153,7 @@ int main() {
 				printf("Enter element whose parent is to be found: ");
 				scanf("%d", &num_1);
 
-                par = t.find(num_1);
+               	 		par = t.find(num_1);
 				if(par!=-1){
 					printf("%d is in the set whose parent is %d\nSearch successful!", num_1, par);
 				}

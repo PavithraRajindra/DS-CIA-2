@@ -26,3 +26,42 @@ The implementation of disjoint-set data structure using trees, particularly with
   -Different variations, such as using path compression or weighted union, can be applied based on the specific requirements of the application.
 
 Overall, tree-based implementations with union by rank strike a balance between efficiency, memory usage, and scalability, making them a popular choice for implementing disjoint-set data structures in various algorithms and applications.
+
+## Algorithm
+
+## Algorithm: Create(Data)
+    - **Input:** Data(integer).
+    - **Output:** Newnode (pointer to a node).
+    - **Steps:**
+        - Allocate memory for a new node.
+        - Initialize the new node->data = data value 
+        - Setting its parent pointer to itself and rank = 0.
+        - If capacity of the nodes array < new node->data, resize the array.
+        - Set nodes[data] = newnode->data
+        - Return a pointer to the new node.
+
+## Algorithm: Find(Element)
+    - **Input:** Data(integer).
+    - **Output**: Pointer to the root node of the tree.
+    - **Steps:**
+        - Retrieve the node corresponding to the given element's data value from the nodes array.
+        - If the node is not found, return nullptr.
+        - Initialize temp = nodes[data].
+        - While temp->parent is not equal to the node itself:
+            - Update temp->parent to point to the root node of its parent.
+            - Move to the parent node.
+        - Return the pointer to the root node of the tree.
+
+## Algorithm: Merge(Element1, Element2)
+    - **Input:** Num1 and Num2 (integers).
+    -** Output:** Success or Failure.
+    - **Steps:**
+        - Call Find method to find the root nodes of the elements.
+        - If either of the elements is not found (i.e., Find operation returns nullptr), return False.
+        - If the root nodes of both elements are the same, return False (Sets are not disjoint).
+        - Otherwise, compare the ranks of the two root nodes:
+            - If first_node->rank < second_node->rank, make the first root node the child of the second root node.
+            - If first_node->rank > second_node->rank, make the second root node the child of the first root node.
+            - If the ranks are equal, choose one root node to be the parent of the other and increment the rank of the chosen root node.
+        - Return True.
+

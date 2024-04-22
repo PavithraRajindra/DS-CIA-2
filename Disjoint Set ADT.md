@@ -25,7 +25,7 @@ The implementation of disjoint-set data structure using trees, particularly with
   -Tree-based disjoint-set implementations offer flexibility in terms of the underlying data structure. 
   -Different variations, such as using path compression or weighted union, can be applied based on the specific requirements of the application.
 
-    Overall, tree-based implementations with union by rank strike a balance between efficiency, memory usage, and scalability, making them a popular choice for implementing disjoint-set data structures in various algorithms and applications.
+Overall, tree-based implementations with union by rank strike a balance between efficiency, memory usage, and scalability, making them a popular choice for implementing disjoint-set data structures in various algorithms and applications.
 
 ## Algorithm
 

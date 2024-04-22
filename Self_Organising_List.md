@@ -24,7 +24,6 @@ Therefore the Doubly Linked List with the Move-to-Front method remains the best-
 
 ## Algorithm 1: Insertion of an element into the SOL
 **Input:** head, num: The integer value to be inserted into the linked list.
-
 **Output:** true (if the insertion is successful) / false (if memory allocation fails).
 
     1. Create a new node initialize the new node.

@@ -346,34 +346,34 @@ Therefore f(n) = O(n)
 
 **1. Cache Management:**
 
-    • In computer systems, caches store frequently accessed data from main memory to improve retrieval speed. SOLs can be employed in cache management to prioritize data items that are accessed more often. By moving recently accessed data to the front of the list, subsequent retrievals become faster.
+• In computer systems, caches store frequently accessed data from main memory to improve retrieval speed. SOLs can be employed in cache management to prioritize data items that are accessed more often. By moving recently accessed data to the front of the list, subsequent retrievals become faster.
     
 **2. Recently Used Items (RUIs) Lists:**
 
-    • Many applications maintain lists of recently used items (RUIs) to provide users with quick access to previously interacted-with elements. SOLs can be used for these RUI lists, ensuring that the most recently used items are at the beginning for faster retrieval. This can be seen in features like recently opened files or browsing history.
+• Many applications maintain lists of recently used items (RUIs) to provide users with quick access to previously interacted-with elements. SOLs can be used for these RUI lists, ensuring that the most recently used items are at the beginning for faster retrieval. This can be seen in features like recently opened files or browsing history.
 
 **3. Branch Prediction in Processors:**
 
-    • Modern processors employ branch prediction to speculate on which branch (true or false) of a conditional statement is more likely to be taken. SOLs can be used to store branch history information, with frequently taken branches positioned closer to the front for faster prediction decisions.
+• Modern processors employ branch prediction to speculate on which branch (true or false) of a conditional statement is more likely to be taken. SOLs can be used to store branch history information, with frequently taken branches positioned closer to the front for faster prediction decisions.
 
 **4. Network Routing:**
 
-    • In networking scenarios, routers maintain routing tables to determine the best path for data packets. SOLs can be used in these routing tables to prioritize frequently used routes, potentially improving network performance.
+• In networking scenarios, routers maintain routing tables to determine the best path for data packets. SOLs can be used in these routing tables to prioritize frequently used routes, potentially improving network performance.
     
 **5. Database Query Optimization:**
 
-    • Database systems can benefit from SOLs to optimize query execution. By keeping frequently accessed data structures or query patterns at the forefront of an SOL, subsequent queries referencing that data might experience faster execution times.
+• Database systems can benefit from SOLs to optimize query execution. By keeping frequently accessed data structures or query patterns at the forefront of an SOL, subsequent queries referencing that data might experience faster execution times.
     
 **6. Spell Checkers and Autocomplete:**
 
-    • Spell checkers and autocomplete features rely on maintaining a dictionary of words. SOLs can be used for these dictionaries, keeping frequently misspelled words or user-typed prefixes closer to the beginning for faster suggestion retrieval.
+• Spell checkers and autocomplete features rely on maintaining a dictionary of words. SOLs can be used for these dictionaries, keeping frequently misspelled words or user-typed prefixes closer to the beginning for faster suggestion retrieval.
     
 **7. Intrusion Detection Systems (IDS):**
 
-    • IDS monitor network traffic for suspicious activity. SOLs can be used to store patterns of known attacks or suspicious IP addresses. By prioritizing recently encountered patterns, the IDS might be able to identify potential threats more efficiently.
+• IDS monitor network traffic for suspicious activity. SOLs can be used to store patterns of known attacks or suspicious IP addresses. By prioritizing recently encountered patterns, the IDS might be able to identify potential threats more efficiently.
     
 **8. Web Server Request Logging:**
 
-    • Web servers often log access requests. SOLs can be used to maintain these logs, keeping recently accessed pages or user information closer to the front for faster retrieval during analysis or troubleshooting.
+• Web servers often log access requests. SOLs can be used to maintain these logs, keeping recently accessed pages or user information closer to the front for faster retrieval during analysis or troubleshooting.
 
 

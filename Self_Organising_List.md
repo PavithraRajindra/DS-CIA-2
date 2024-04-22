@@ -24,7 +24,7 @@ Therefore the Doubly Linked List with the Move-to-Front method remains the best-
 
 ## Algorithm 1: Insertion of an element into the SOL
 **Input:** head, num: The integer value to be inserted into the linked list.
-Output: true (if the insertion is successful) / false (if memory allocation fails).
+**Output:** true (if the insertion is successful) / false (if memory allocation fails).
 
     1. Create a new node initialize the new node.
     2. newnode->data <- num
@@ -40,9 +40,9 @@ Output: true (if the insertion is successful) / false (if memory allocation fail
         c. tail <- newnode
         d. return true
 
-Algorithm 2: Deletion of an element into the SOL
-Input: head, num: The integer value to be deleted from the linked list.
-Output: true (if the deletion is successful) / false (if the element is not found in the list or the list is empty).
+## Algorithm 2: Deletion of an element into the SOL
+**Input:** head, num: The integer value to be deleted from the linked list.
+**Output:** true (if the deletion is successful) / false (if the element is not found in the list or the list is empty).
 
     1. Initialize a temporary node temp <- head
     2. Repeat until temp is not nullptr

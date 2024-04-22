@@ -20,18 +20,18 @@ class tree
 		tree(){
 			capacity = 100;
 			nodes = (struct node**) malloc(capacity * sizeof(struct node*));
-			if(nodes==nullptr){
+			if(nodes==NULL){
 				printf("Memory  allocation failed!");
 				exit(0);
 			}
 			for (int i = 0; i < capacity; i++){
-				nodes[i] = nullptr;
+				nodes[i] = NULL;
 			}
 		}
 
 		//Destructor
 		~tree(){
-			for( int i = 0; i < capacity; i++){
+			for(int i = 0; i < capacity; i++){
 				free(nodes[i]);
 			}
 			free(nodes);
@@ -43,16 +43,16 @@ class tree
 };
 
 // Method to create a new node with a given data value
-tree :: node* tree :: create(int data){
+tree::node* tree::create(int data){
   struct node* newnode = (struct node*)malloc(sizeof(struct node));
-	if(newnode==nullptr){
+	if(newnode==NULL){
 		printf("Memory Allocation failed!");
 		exit(0);
 	}
-	if (capacity <= data) {
+	if (capacity <= data){
         int new_capacity = capacity*2;
         struct node** new_nodes = (struct node**)malloc(new_capacity* sizeof(struct node*));
-        if (new_nodes == nullptr) {
+        if (new_nodes == NULL) {
             printf("Memory Allocation failed!");
             free(newnode);
             exit(0);
@@ -61,7 +61,7 @@ tree :: node* tree :: create(int data){
             new_nodes[i] = nodes[i];
         }
         for (int i = capacity; i < new_capacity; i++) {
-            new_nodes[i] = nullptr;
+            new_nodes[i] = NULL;
         }
         free(nodes);
         nodes = new_nodes;
@@ -70,13 +70,18 @@ tree :: node* tree :: create(int data){
     newnode->data = data;
     newnode->parent = newnode; 
     newnode->rank = 0; 
-	nodes[data]=newnode;
+	if(nodes[data]==NULL){
+		nodes[data]=newnode;
+	}
+	else{
+		free(newnode);
+	}
     return newnode;
 }
 
 // Method to find the root of the tree containing the given node
 int tree::find(int ele){
-    if (ele < 0 || ele >= capacity || nodes[ele] == nullptr){
+    if (ele < 0 || ele >= capacity || nodes[ele] == NULL){
         return -1;
     }
 

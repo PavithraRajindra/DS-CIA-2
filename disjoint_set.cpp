@@ -49,8 +49,15 @@ tree::node* tree::create(int data){
 		printf("Memory Allocation failed!");
 		exit(0);
 	}
+
+	if (nodes[data]!=NULL){
+			printf("Value %d is already in the set.\n", data);
+			free(newnode);
+			return NULL;
+	}
+
 	if (capacity <= data){
-        int new_capacity = capacity*2;
+        int new_capacity = data+1;
         struct node** new_nodes = (struct node**)malloc(new_capacity* sizeof(struct node*));
         if (new_nodes == NULL) {
             printf("Memory Allocation failed!");
@@ -158,12 +165,12 @@ int main() {
 				printf("Enter element whose parent is to be found: ");
 				scanf("%d", &num_1);
 
-               	 		par = t.find(num_1);
+        		par = t.find(num_1);
 				if(par!=-1){
-					printf("%d is in the set whose parent is %d\nSearch successful!", num_1, par);
+					printf("%d is in the set whose parent is %d", num_1, par);
 				}
 				else{
-					printf("Error: Element %d not found!\nSearch failed!",num_1);
+					printf("Error: Element %d not found!",num_1);
 				}
 				break;
 

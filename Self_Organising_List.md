@@ -24,6 +24,7 @@ Therefore the Doubly Linked List with the Move-to-Front method remains the best-
 
 ## Algorithm 1: Insertion of an element into the SOL
 **Input:** head, num: The integer value to be inserted into the linked list.
+
 **Output:** true (if the insertion is successful) / false (if memory allocation fails).
 
     1. Create a new node initialize the new node.
@@ -42,6 +43,7 @@ Therefore the Doubly Linked List with the Move-to-Front method remains the best-
 
 ## Algorithm 2: Deletion of an element into the SOL
 **Input:** head, num: The integer value to be deleted from the linked list.
+
 **Output:** true (if the deletion is successful) / false (if the element is not found in the list or the list is empty).
 
     1. Initialize a temporary node temp <- head
@@ -69,9 +71,10 @@ Therefore the Doubly Linked List with the Move-to-Front method remains the best-
     3. otherwise
         a. return false
 
-Algorithm 3: MTF (Move To Front) – move an element to the front
-Input: head, temp: A pointer to the node that needs to be moved to the front of the linked list.
-Output: The linked list is modified such that the node originally pointed to by temp becomes the new head node.
+## Algorithm 3: MTF (Move To Front) – move an element to the front
+**Input**: head, temp: A pointer to the node that needs to be moved to the front of the linked list.
+
+**Output:** The linked list is modified such that the node originally pointed to by temp becomes the new head node.
 
     1. if temp is head
         a. return 
@@ -86,9 +89,10 @@ Output: The linked list is modified such that the node originally pointed to by 
     7. temp->next <- head
     8. head <- temp
  
-Algorithm 4: Access an element in the SOL
-Input: head, num: The integer value to be searched for in the linked list.
-Output: true (if the element with the value num is found in the list) / false (if the element is not found in the list).
+## Algorithm 4: Access an element in the SOL
+**Input:** head, num: The integer value to be searched for in the linked list.
+
+**Output:** true (if the element with the value num is found in the list) / false (if the element is not found in the list).
  
     1. Initialize a pointer variable target <- head
     2. Repeat until target is not nullptr
@@ -99,9 +103,10 @@ Output: true (if the element with the value num is found in the list) / false (i
     3. otherwise
         a.  return false
 
-Algorithm 5: Display elements of the SOL
-Input: head
-Output: Prints the contents of the self-organizing list to the console. If the list is empty, an appropriate message is displayed.
+## Algorithm 5: Display elements of the SOL
+**Input:** head
+
+**Output:** Prints the contents of the self-organizing list to the console. If the list is empty, an appropriate message is displayed.
 
     1. Initialize a temporary node temp <- head
     2. if head is nullptr
@@ -113,7 +118,7 @@ Output: Prints the contents of the self-organizing list to the console. If the l
             ii. temp <- temp->next
 
 
-FUNCTIONAL REQUIREMENTS:
+## FUNCTIONAL REQUIREMENTS:
     1. insertion()
     2. deletion()
     3. movetofront()
@@ -121,9 +126,9 @@ FUNCTIONAL REQUIREMENTS:
     5. display()
 
 
-TIME COMPLEXITY ANALYSIS FOR EACH ALGORITHM:
+## TIME COMPLEXITY ANALYSIS FOR EACH ALGORITHM:
 
-1. insertion() – O(1) (Constant Time)
+### 1. insertion() – O(1) (Constant Time)
 f(n) = 5(newnode creation and initialization )+4 (insertion when list is empty)+4(insertion when list is non-empty)
 f(n) =9 
 g(n) = 1 and c = 10
@@ -139,18 +144,18 @@ Cost of c.g(n)
 10
 
 Therefore n0 = 0 for which f(n) <= c.g(n) is true for all n0 < n .                    Therefore f(n) = O(n)
-Analysis summary:
+**Analysis summary:**
     • Best Case: O(1) (Constant Time)
     • Average Case: O(1) (Constant Time)
     • Worst Case: O(1) (Constant Time)
 
-Explanation:
+**Explanation:**
 The provided insertion method specifically inserts new nodes at the end of the linked list. This characteristic leads to constant time complexity in all cases:
     • Best Case (O(1)): Even if the list is empty (head == nullptr), only a few constant time operations are needed to set the new node as both head and tail.
     • Average Case (O(1)): Regardless of the initial list state (empty or non-empty), inserting at the end always involves a fixed number of pointer updates, making the average time complexity constant.
     • Worst Case (O(1)): The worst case scenario, where the list might be very large, doesn't affect the time complexity. Since we're only manipulating pointers at the end of the list for insertion, the number of operations remains constant, resulting in O(1) complexity.
 
-2. deletion()– O(n)
+### 2. deletion()– O(n)
 	f(n) = 1(initialization of temp pointer)+(12n+1)(traversal and deletion)+1(return value)
 	f(n) = 12n+3
 	g(n) = n and c = 13
@@ -175,19 +180,19 @@ Cost of c.g(n)
 52
 
 Therefore n0 = 3 for which f(n) <= c.g(n) is true for all n0 < n .                    Therefore f(n) = O(n)
-Analysis summary:
+**Analysis summary:**
     • Best Case: O(1) (Constant Time)
     • Average Case: O(n) (Linear Time)
     • Worst Case: O(n) (Linear Time)
 
-Explanation:
+**Explanation:**
 
 The time complexity of the deletion method depends on how long it takes to find the target element in the list.
     • Best Case (O(1)): This occurs when the target element is at the head of the list. In this case, the first iteration of the loop finds the element, and the deletion process involving pointer updates and memory deallocation takes constant time.
     • Average Case (O(n)): On average, the element might be located somewhere in the middle of the list. The loop needs to iterate potentially through all n elements in the worst case to reach the target. The average number of iterations might be less than n but still proportional to the list size.
     • Worst Case (O(n)): The worst case scenario happens when the target element is at the end of the list or isn't present in the list at all. The loop iterates through the entire list (n elements) before exiting without finding a match.
 
-3. movetofront()– O(1) (Constant Time)
+### 3. movetofront()– O(1) (Constant Time)
 	f(n) = 4(constant time checks)+5(pointer updates)
 	f(n) = 9
 	g(n) = 1 and c = 10
@@ -203,17 +208,17 @@ Cost of c.g(n)
 10
 
 Therefore n0 = 0 for which f(n) <= c.g(n) is true for all n0 < n .                    Therefore f(n) = O(1)
-Analysis summary:
+**Analysis summary:**
         ◦ Best Case: O(1) (Constant Time)
         ◦ Average Case: O(1) (Constant Time)
         ◦ Worst Case: O(1) (Constant Time)
         ◦ 
-Explanation:
+**Explanation:**
         ◦ Best Case (O(1)): This occurs when temp is already the head of the list. In this case, the first check (temp == head) leads to an immediate return, requiring only a constant time comparison.
         ◦ Average Case (O(1)): Even for a non-special case (where temp is not the head or tail), the pointer updates and assignments are all constant time operations. The average time complexity remains constant because the method performs the same set of operations irrespective of the initial position of temp within the list.
         ◦ Worst Case (O(1)): The worst case also results in constant time complexity. Regardless of the list's size or temp's position, the method involves a fixed number of pointer manipulations and assignments, leading to O(1) complexity.
 
-4. access()– O(n)
+### 4. access()– O(n)
 	f(n) = 1(initialization of search pointer)+ (4n+1)(search loop and MTF function)+1(return value)
 	f(n) = 4n+3
 	g(n) = n and c = 5
@@ -238,17 +243,17 @@ Cost of c.g(n)
 20
 
 Therefore n0 = 3 for which f(n) <= c.g(n) is true for all n0 < n .                    Therefore f(n) = O(n)
-Analysis summary:
+**Analysis summary:**
         ◦ Best Case: O(1) (Constant Time)
         ◦ Average Case: O(n) (Linear Time)
         ◦ Worst Case: O(n) (Linear Time)
         ◦ 
-Explanation:
+**Explanation:**
         ◦ Best Case (O(1)): This occurs when the target element is at the head of the list. In this case, the first iteration of the loop finds the element, and the subsequent call to movetofront has constant time complexity (as analyzed previously). The overall time complexity becomes constant (O(1)).
         ◦ Average Case (O(n)): On average, the element might be located somewhere in the middle of the list. The loop needs to iterate potentially through all n elements in the worst case to reach the target. The average number of iterations might be less than n but still proportional to the list size, leading to an average time complexity of O(n).
         ◦ Worst Case (O(n)): The worst case scenario happens when the target element is at the end of the list or isn't present in the list at all. The loop iterates through the entire list (n elements) before exiting without finding a match. The additional call to movetofront (which is O(1)) doesn't affect the dominant factor, which is the search loop.
 
-5. display()– O(n)
+### 5. display()– O(n)
 	f(n) = 1(initializing temp pointer)+1(list is empty)+(3n+2)(traversal and display)
 	f(n) = 3n+4
 	g(n) = n and c = 4
@@ -281,35 +286,35 @@ Cost of c.g(n)
 19
 20
 Therefore n0 = 4 for which f(n) <= c.g(n) is true for all n0 < n .                    Therefore f(n) = O(n)
-Analysis summary:
+**Analysis summary:**
     • Best Case: O(n) (Linear Time)
     • Average Case: O(n) (Linear Time)
     • Worst Case: O(n) (Linear Time)
 
-Explanation:
+**Explanation:**
         ◦ Best Case (O(n)): Even if the list has only one element (head), the loop needs to iterate once to print that element's data. This results in linear time complexity (O(n)).
         ◦ Average Case (O(n)): There's no scenario where the loop iterates less than the number of elements (n) in the list. On average, the loop iterates through all elements, leading to O(n) complexity.
         ◦ Worst Case (O(n)): The worst case also exhibits linear time complexity. Regardless of the data arrangement in the SOL (random, sorted, etc.), the loop needs to visit all elements once to print their data, resulting in O(n) complexity.
 
-APPLICATIONS:
+## APPLICATIONS:
 
-Some common applications of SOLs:
+### Some common applications of SOLs:
 
-1. Cache Management:
+**1. Cache Management:**
     • In computer systems, caches store frequently accessed data from main memory to improve retrieval speed. SOLs can be employed in cache management to prioritize data items that are accessed more often. By moving recently accessed data to the front of the list, subsequent retrievals become faster.
-2. Recently Used Items (RUIs) Lists:
+**2. Recently Used Items (RUIs) Lists:**
     • Many applications maintain lists of recently used items (RUIs) to provide users with quick access to previously interacted-with elements. SOLs can be used for these RUI lists, ensuring that the most recently used items are at the beginning for faster retrieval. This can be seen in features like recently opened files or browsing history.
-3. Branch Prediction in Processors:
+**3. Branch Prediction in Processors:**
     • Modern processors employ branch prediction to speculate on which branch (true or false) of a conditional statement is more likely to be taken. SOLs can be used to store branch history information, with frequently taken branches positioned closer to the front for faster prediction decisions.
-4. Network Routing:
+**4. Network Routing:**
     • In networking scenarios, routers maintain routing tables to determine the best path for data packets. SOLs can be used in these routing tables to prioritize frequently used routes, potentially improving network performance.
-5. Database Query Optimization:
+**5. Database Query Optimization:**
     • Database systems can benefit from SOLs to optimize query execution. By keeping frequently accessed data structures or query patterns at the forefront of an SOL, subsequent queries referencing that data might experience faster execution times.
-6. Spell Checkers and Autocomplete:
+**6. Spell Checkers and Autocomplete:**
     • Spell checkers and autocomplete features rely on maintaining a dictionary of words. SOLs can be used for these dictionaries, keeping frequently misspelled words or user-typed prefixes closer to the beginning for faster suggestion retrieval.
-7. Intrusion Detection Systems (IDS):
+**7. Intrusion Detection Systems (IDS):**
     • IDS monitor network traffic for suspicious activity. SOLs can be used to store patterns of known attacks or suspicious IP addresses. By prioritizing recently encountered patterns, the IDS might be able to identify potential threats more efficiently.
-8. Web Server Request Logging:
+**8. Web Server Request Logging:**
     • Web servers often log access requests. SOLs can be used to maintain these logs, keeping recently accessed pages or user information closer to the front for faster retrieval during analysis or troubleshooting.
 
 

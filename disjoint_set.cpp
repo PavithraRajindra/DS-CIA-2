@@ -50,12 +50,6 @@ tree::node* tree::create(int data){
 		exit(0);
 	}
 
-	if (nodes[data]!=NULL){
-			printf("Value %d is already in the set.\n", data);
-			free(newnode);
-			return NULL;
-	}
-
 	if (capacity <= data){
         int new_capacity = data+1;
         struct node** new_nodes = (struct node**)malloc(new_capacity* sizeof(struct node*));
@@ -74,6 +68,12 @@ tree::node* tree::create(int data){
         nodes = new_nodes;
         capacity = new_capacity;
     }
+
+	if (nodes[data]!=NULL){
+			printf("Value %d is already in the set.\n", data);
+			free(newnode);
+			return NULL;
+	}	
     newnode->data = data;
     newnode->parent = newnode; 
     newnode->rank = 0; 

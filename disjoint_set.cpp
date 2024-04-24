@@ -21,7 +21,7 @@ class tree
 			capacity = 100;
 			nodes = (struct node**) malloc(capacity * sizeof(struct node*));
 			if(nodes==NULL){
-				printf("Memory  allocation failed!");
+				printf("Memory allocation failed!");
 				exit(0);
 			}
 			for (int i = 0; i < capacity; i++){
@@ -158,7 +158,7 @@ int main() {
 		switch(choice){
 
 			case 1:
-				printf("Enter element to be inserted: ");
+				printf("Enter 1 element to be inserted: ");
 				scanf("%d", &num_1);
 
 				if(t.create(num_1)){
@@ -183,7 +183,7 @@ int main() {
 				break;
 
 			case 3:
-				printf("Enter elements of the sets to be merged: ");
+				printf("Enter 2 elements of any sets to be merged: ");
 				scanf("%d %d", &num_1, &num_2);
 
 				if(t.merge(num_1, num_2)){

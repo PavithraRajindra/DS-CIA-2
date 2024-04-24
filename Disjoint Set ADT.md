@@ -30,32 +30,35 @@ Overall, tree-based implementations with union by rank strike a balance between 
 ## Algorithm
 
 ## Algorithm: Create(Data)
-    - Input: Data(integer).
-    - Output: Newnode (pointer to a node).
-    - Steps:
-        - Allocate memory for a new node.
-        - Initialize the new node->data = data value 
+    - Input: data(integer).
+    - Output: newnode (pointer to a node).
+    
+        1. Create a newnode and initialize the new node.
+        2. newnode->data = data value
         - Setting its parent pointer to itself and rank = 0.
         - If capacity of the nodes array < new node->data, resize the array.
         - Set nodes[data] = newnode->data
         - Return a pointer to the new node.
 
 ## Algorithm: Find(Element)
-    - Input: Data(integer).
+    - Input: ele(integer).
     - Output: Pointer to the root node of the tree.
-    - Steps:
-        - Retrieve the node corresponding to the given element's data value from the nodes array.
-        - If the node is not found, return nullptr.
-        - Initialize temp = nodes[data].
-        - While temp->parent is not equal to the node itself:
-            - Update temp->parent to point to the root node of its parent.
-            - Move to the parent node.
-        - Return the pointer to the root node of the tree.
+    
+      1. if ele lesser than 0 or ele greater than or equal to capacity or nodes[ele] is NULL
+             a. return -1
+    
+
+    struct node* temp = nodes[ele];
+    if (temp != temp->parent){
+        int root_data = find(temp->parent->data);
+		temp->parent=nodes[root_data];
+    }
+    return temp->parent->data;
 
 ## Algorithm: Merge(Element1, Element2)
     - Input: Num1 and Num2 (integers).
     - Output: Success or Failure.
-    - Steps:
+    
         - Call Find method to find the root nodes of the elements.
         - If either of the elements is not found (i.e., Find operation returns nullptr), return False.
         - If the root nodes of both elements are the same, return False (Sets are not disjoint).

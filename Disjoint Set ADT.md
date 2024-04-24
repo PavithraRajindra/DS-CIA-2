@@ -46,10 +46,8 @@ Overall, tree-based implementations with union by rank strike a balance between 
     
       1. if ele lesser than 0 or ele greater than or equal to capacity or nodes[ele] is NULL
              a. return -1
-    
-
-    struct node* temp = nodes[ele];
-    if (temp != temp->parent){
+      2. create a pointer temp = nodes[ele]
+      3. if temp is not temp->parent
         int root_data = find(temp->parent->data);
 		temp->parent=nodes[root_data];
     }

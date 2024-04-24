@@ -131,7 +131,9 @@ Therefore the Doubly Linked List with the Move-to-Front method remains the best-
 ### 1. insertion() – O(1) (Constant Time)
 
 f(n) = 5(newnode creation and initialization )+4 (insertion when list is empty)+4(insertion when list is non-empty)
+
 f(n) =9 
+
 g(n) = 1 and c = 10
 
 n
@@ -167,9 +169,11 @@ The provided insertion method specifically inserts new nodes at the end of the l
 
 ### 2. deletion()– O(n)
 
-	f(n) = 1(initialization of temp pointer)+(12n+1)(traversal and deletion)+1(return value)
-	f(n) = 12n+3
-	g(n) = n and c = 13
+f(n) = 1(initialization of temp pointer)+(12n+1)(traversal and deletion)+1(return value)
+
+f(n) = 12n+3
+
+g(n) = n and c = 13
 
 n
 Cost of f(n)
@@ -213,9 +217,11 @@ The time complexity of the deletion method depends on how long it takes to find 
 
 ### 3. movetofront()– O(1) (Constant Time)
 
-	f(n) = 4(constant time checks)+5(pointer updates)
-	f(n) = 9
-	g(n) = 1 and c = 10
+f(n) = 4(constant time checks)+5(pointer updates)
+
+f(n) = 9
+
+g(n) = 1 and c = 10
 
 n
 Cost of f(n)
@@ -247,9 +253,11 @@ Therefore n0 = 0 for which f(n) <= c.g(n) is true for all n0 < n .              
 
 ### 4. access()– O(n)
 
-	f(n) = 1(initialization of search pointer)+ (4n+1)(search loop and MTF function)+1(return value)
-	f(n) = 4n+3
-	g(n) = n and c = 5
+f(n) = 1(initialization of search pointer)+ (4n+1)(search loop and MTF function)+1(return value)
+
+f(n) = 4n+3
+
+g(n) = n and c = 5
 
 n
 Cost of f(n)
@@ -290,9 +298,11 @@ Therefore n0 = 3 for which f(n) <= c.g(n) is true for all n0 < n .              
 
 ### 5. display()– O(n)
 
-	f(n) = 1(initializing temp pointer)+1(list is empty)+(3n+2)(traversal and display)
-	f(n) = 3n+4
-	g(n) = n and c = 4
+f(n) = 1(initializing temp pointer)+1(list is empty)+(3n+2)(traversal and display)
+
+f(n) = 3n+4
+
+g(n) = n and c = 4
 
 
 n

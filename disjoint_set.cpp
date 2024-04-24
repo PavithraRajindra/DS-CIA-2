@@ -44,7 +44,14 @@ class tree
 
 // Method to create a new node with a given data value
 tree::node* tree::create(int data){
-  struct node* newnode = (struct node*)malloc(sizeof(struct node));
+
+	if (data<0)
+	{
+		printf("Negative values cannot be inserted\n");
+		return NULL;
+	}
+
+ 	struct node* newnode = (struct node*)malloc(sizeof(struct node));
 	if(newnode==NULL){
 		printf("Memory Allocation failed!");
 		exit(0);
@@ -73,7 +80,8 @@ tree::node* tree::create(int data){
 			printf("Value %d is already in the set.\n", data);
 			free(newnode);
 			return NULL;
-	}	
+	}
+
     newnode->data = data;
     newnode->parent = newnode; 
     newnode->rank = 0; 

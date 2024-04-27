@@ -47,7 +47,7 @@ int main()
 
                 if (l1.insertion(num)) 
                 {
-                    printf("Element %d inserted successfully.\n\n", num);
+                    printf("\nElement %d inserted successfully.\n\n", num);
                 } 
                 else 
                 {
@@ -61,11 +61,11 @@ int main()
 
                 if (l1.deletion(num)) 
                 {
-                    printf("Element %d deleted successfully.\n\n", num);
+                    printf("\nElement %d deleted successfully.\n\n", num);
                 } 
                 else 
                 {
-                    printf("Deletion failed.\n\n");
+                    printf("\nDeletion failed.\n\n");
                 }
                 break;
 
@@ -75,11 +75,11 @@ int main()
 
                 if (l1.access(num)) 
                 {
-                    printf("Element %d accessed.\n\n", num);
+                    printf("\nElement %d accessed.\n\n", num);
                 }
                 else 
                 {
-                    printf("Element %d not found.\n\n", num);
+                    printf("\nElement %d not found.\n\n", num);
                 }
                 break;
 
@@ -101,6 +101,17 @@ int main()
 //Method to insert an element into the SOL
 bool List::insertion(int num)
 {
+    struct node* temp = head;
+    while (temp != nullptr)
+    {
+        if (temp->data == num)
+        {
+            printf("\n%d already exists.\n\n",num);
+            return false;            
+        }
+        temp = temp->next;
+    } 
+
     struct node *newnode = (struct node *)malloc(sizeof(struct node));
     if (newnode == NULL)
     {

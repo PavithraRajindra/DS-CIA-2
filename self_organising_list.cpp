@@ -101,17 +101,6 @@ int main()
 //Method to insert an element into the SOL
 bool List::insertion(int num)
 {
-    struct node* temp = head;
-    while (temp != nullptr)
-    {
-        if (temp->data == num)
-        {
-            printf("\n%d already exists.\n\n",num);
-            return false;            
-        }
-        temp = temp->next;
-    } 
-
     struct node *newnode = (struct node *)malloc(sizeof(struct node));
     if (newnode == NULL)
     {

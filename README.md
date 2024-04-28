@@ -30,7 +30,7 @@ timeline
 ```
 
 ## Contributors
-Team Member's Details: \
+Team Member's Details: 
 |Name | Roll Number | Role |
 |:---|:---:|:---|
 | S Meghna | 23110528 | Project Manager |

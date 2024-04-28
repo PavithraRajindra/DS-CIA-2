@@ -11,7 +11,7 @@ This repository contains the implementation of Disjoint Set ADT and Self-Organiz
 - `disjoint_set.cpp`: Implementation of Disjoint Set ADT.
 - `self_organising_list.cpp`: Implementation of Self-Organizing List.
 - `Self Organising List.txt`: Explanation for the use of "move to front" in SOL
-- `SOL_Test cases.docx`: Implementation of Functional testing by revewing test cases. 
+- `Self Organizing List - Test_cases.pdf`: Implementation of Functional testing by revewing test cases. 
 - `Disjoint Set ADT.md`: Explanation for the use of "trees and union by rank" in Disjoint Set
 
 

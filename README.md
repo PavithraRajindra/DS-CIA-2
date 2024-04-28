@@ -31,16 +31,16 @@ timeline
 
 ## Contributors
 Team Member's Details: 
-|Name | Roll Number | Role |
-|:---|:---:|:---|
-| S Meghna | 23110528 | Project Manager |
-| S K Karisma | 23110270 | Business Analyst | 
-| Nilanjana T | 23110104 | Tester | 
-| Shravya K | 23110401 | Tester |  
-| Swaathi B  | 23110017 | Tester |
-| Pavithra Rajindra | 23110088 | Developer | 
-| R Sai Sreya | 23110186 | Developer |  
-| R G Samyuktha | 23110108 | Developer |
-| Sanjana S | 23110176 | Developer |  
-| Pavithra T A | 23110412 | Developer |
+|Name | Role |
+|:---|:---|
+| S Meghna | Project Manager |
+| S K Karisma | Business Analyst | 
+| Nilanjana T | Tester | 
+| Shravya K | Tester |  
+| Swaathi B  | Tester |
+| Pavithra Rajindra | Developer | 
+| R Sai Sreya | Developer |  
+| R G Samyuktha | Developer |
+| Sanjana S | Developer |  
+| Pavithra T A | Developer |
 

@@ -15,6 +15,16 @@ This repository contains the implementation of Disjoint Set ADT and Self-Organiz
 - `Self Organizing List - Test_cases.pdf`: Implementation of Functional testing by reviewing test cases.[Self Organising List]
 - `Disjoint Set Test Cases`: Implementation of Functional testing by reviewing test cases.[Disjoint Set ADT]
   
+```mermaid
+timeline
+    title History of Social Media Platform
+    2002 : LinkedIn
+    2004 : Facebook
+         : Google
+    2005 : Youtube
+    2006 : Twitter
+
+```
 
 ## Contributors
 Team Member's Details: [Name, Roll Number, Role]

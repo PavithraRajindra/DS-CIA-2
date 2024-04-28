@@ -31,14 +31,14 @@ timeline
 
 ## Contributors
 Team Member's Details: [Name, Roll Number, Role]
-	1. S Meghna 			- 23110528 - Project Manager
-	2. S K Karisma 			- 23110270 - Business Analyst
-	3. Nilanjana T 			- 23110104 - Tester
-	4. Shravya K 			- 23110401 - Tester
-	5. Swaathi B 			- 23110017 - Tester
-	6. Pavithra Rajindra 		- 23110088 - Developer
-	7. R Sai Sreya 			- 23110186 - Developer
-	8. R G Samyuktha 		- 23110108 - Developer
-	9. Sanjana S 			- 23110176 - Developer
-	10. Pavithra T A 		- 23110412 - Developer
+	1. S Meghna 			- 23110528 - Project Manager/
+	2. S K Karisma 			- 23110270 - Business Analyst/
+	3. Nilanjana T 			- 23110104 - Tester/
+	4. Shravya K 			- 23110401 - Tester/
+	5. Swaathi B 			- 23110017 - Tester/
+	6. Pavithra Rajindra 		- 23110088 - Developer/
+	7. R Sai Sreya 			- 23110186 - Developer/
+	8. R G Samyuktha 		- 23110108 - Developer/
+	9. Sanjana S 			- 23110176 - Developer/
+	10. Pavithra T A 		- 23110412 - Developer/
 

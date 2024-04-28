@@ -21,17 +21,12 @@ timeline
     12th April : Allocation of roles
     13th April : Analysing the problem statement
     14th April : Designing the program
-    17th April : Coding Process
-    18th April : Completion of SOL
-               : Testing/Debugging the code
-    20th April : Completion of Disjoint Set
-               : Testing/Debugging the code
+    17th April : Coding process
+    20th April : Beginning of the testing process
     22nd April : Completion of the testing process
     23rd April : Refactoring
     25th April : Documentation and maintaining
-    27th April : Finalising of files
-               : Completion of project
-
+    27th April : Completion of project
 ```
 
 ## Contributors

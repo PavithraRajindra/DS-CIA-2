@@ -27,6 +27,7 @@ timeline
     23rd April : Refactoring
     25th April : Documentation
     27th April : Completion of project
+end
 ```
 
 ## Contributors

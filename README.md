@@ -25,7 +25,7 @@ timeline
     20th April : Beginning of the testing process
     22nd April : Completion of the testing process
     23rd April : Refactoring
-    25th April : Documentation and maintaining
+    25th April : Documentation
     27th April : Completion of project
 ```
 

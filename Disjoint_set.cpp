@@ -58,23 +58,23 @@ tree::node* tree::create(int data){
 	}
 
 	if (capacity <= data){
-        int new_capacity = data+1;
-        struct node** new_nodes = (struct node**)malloc(new_capacity* sizeof(struct node*));
-        if (new_nodes == NULL) {
-            printf("Memory Allocation failed!");
-            free(newnode);
-            exit(0);
-        }
-        for (int i = 0; i < capacity; i++) {
-            new_nodes[i] = nodes[i];
-        }
-        for (int i = capacity; i < new_capacity; i++) {
-            new_nodes[i] = NULL;
-        }
-        free(nodes);
-        nodes = new_nodes;
-        capacity = new_capacity;
-    }
+        	int new_capacity = data+1;
+        	struct node** new_nodes = (struct node**)malloc(new_capacity* sizeof(struct node*));
+        	if (new_nodes == NULL) {
+            		printf("Memory Allocation failed!");
+            		free(newnode);
+            		exit(0);
+        	}
+        	for (int i = 0; i < capacity; i++) {
+            		new_nodes[i] = nodes[i];
+        	}
+        	for (int i = capacity; i < new_capacity; i++) {
+            		new_nodes[i] = NULL;
+        	}
+        	free(nodes);
+        	nodes = new_nodes;
+        	capacity = new_capacity;
+    	}
 
 	if (nodes[data]!=NULL){
 			printf("Value %d is already in the set.\n", data);
@@ -82,16 +82,16 @@ tree::node* tree::create(int data){
 			return NULL;
 	}
 
-    newnode->data = data;
-    newnode->parent = newnode; 
-    newnode->rank = 0; 
+   	newnode->data = data;
+    	newnode->parent = newnode; 
+    	newnode->rank = 0; 
 	if(nodes[data]==NULL){
 		nodes[data]=newnode;
 	}
 	else{
 		free(newnode);
 	}
-    return newnode;
+    	return newnode;
 }
 
 // Method to find the root of the tree containing the given node
